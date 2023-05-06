@@ -613,7 +613,33 @@
     Those appear pretty similar, and you might think they are equally good.
     However, the timing information suggests otherwise:
   </p>
-  <h1>Yha pa table ya table ka photo legega to issko hattna mat !!!</h1>
+
+  <center>
+    <table border="2px solid">
+      <tbody>
+        <tr>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th style="background-color: #D8D8D8;">2 by 3 Map</th>
+          <th style="background-color: #D8D8D8;">3 by 3 Map</th>
+          <th style="background-color: #D8D8D8;">3 by 4 Map</th>
+        </tr>
+        <tr>
+          <td style="background-color: #D8D8D8;">Method 1:</td>
+          <td>60 ms.</td>
+          <td>940 ms.</td>
+          <td>60530 ms.(1 minute)</td>
+        </tr>
+        <tr>
+          <td style="background-color: #D8D8D8;">Method 2:</td>
+          <td>0 ms.</td>
+          <td>0 ms.</td>
+          <td>0 ms.</td>
+        </tr>
+      </tbody>
+    </table>
+  </center>
+
+
 
   <p style="color: #858585">
     The zeros in the above table indicate times too short to measure (less
@@ -858,13 +884,15 @@ static boolean no(BinaryTree node) {
   </p>
 
   <center>
-    <table border="">
+    <table border="2px solid">
       <tbody>
-        <td><img src="./Images/black-ball/black-ball.png" alt="black-ball"></td>
-        <td><img src="./Images/black-ball/black-ball.png" alt="black-ball"></td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><img src="./Images/white-ball/white-ball.png" alt="white-ball"></td>
-        <td><img src="./Images/white-ball/white-ball.png" alt="white-ball"></td>
+        <tr>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
       </tbody>
     </table>
   </center>
@@ -874,11 +902,13 @@ static boolean no(BinaryTree node) {
   <center>
     <table border="">
       <tbody>
-        <td><img src="./Images/white-ball/white-ball.png" alt="white-ball"></td>
-        <td><img src="./Images/white-ball/white-ball.png" alt="white-ball"></td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><img src="./Images/black-ball/black-ball.png" alt="black-ball"></td>
-        <td><img src="./Images/black-ball/black-ball.png" alt="black-ball"></td>
+        <tr>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+        </tr>
       </tbody>
     </table>
   </center>
@@ -894,8 +924,132 @@ static boolean no(BinaryTree node) {
 
   <p style="color:#858585 ;">For example, you could make the following sequence of moves:</p>
 
+  <!-- !Yha pa table aur usska paragraph aayega to yaad rkna baccha -->
+  <h1>Table aayega idddhar</h1>
+
+  <p style="color: #858585">
+    The backtracking method is named solvable and returns a boolean. In solvable we shall need to check whether we are
+    at a leaf, which in this case means a position from which no further moves are possible. This isn't so easy.
+  </p>
+  <p style="color: #858585">
+    Now to the program. The main program will initialize the board, and call a recursive backtracking routine to attempt
+    to
+    solve the puzzle. The backtracking routine will either succeed and print out a winning path, or it will fail, and
+    the main program will have to print out the bad news.
+  </p>
+
+  <p style="color: #858585">
+    The backtracking method is named solvable and returns a boolean. In solvable we shall need to check whether we are
+    at a leaf, which in this case means a position from which no further moves are possible. This isn't so easy.
+  </p>
+
+  <p style="color: #858585">
+    Each possible move will result in a new board position, and these
+    new board positions are the children of the current board position. Hence to find the children of a node (that is,
+    of a board position), we need only find the possible moves from that node. Remember that it is also highly desirable
+    to find an ordering on these possible moves.
+  </p>
+
+  <p style="color: #858585">
+    Here it is time to stop and take thought. To make progress, we must
+    analyze the game to some extent. Probably a number of approaches would work, and what follows is based on the way I
+    worked it out. If you were to program this puzzle, you might find a different but equally valid approach.
+  </p>
+
+  <p style="color: #858585">
+    First, notice that if a marble has a move, that move is unique: if it can move ahead one square, then it cannot
+    jump. If it
+    can jump, it cannot move ahead one square. This suggests that, to find the possible moves, we might assign numbers
+    to the marbles, and check each marble in turn. When we have looked at all the marbles, we have looked at all the
+    possible moves. This would require having a table to keep track of where each marble is, or else somehow "marking"
+    each marble with its number and searching the board each time to find the marble we want. Neither alternative is
+    very attractive.
+  </p>
+
+  <p style="color: #858585">
+    Next, notice that for a given board position, each marble occupies a unique space. Hence, instead
+    of talking about moving a particular marble, we can talk about moving the marble in a particular space. If a move is
+    possible from a given space, then that must be the only move possible from that space, because if the marble in that
+    space has a move, it is unique. There is a slight complication because not every space contains a marble, but at
+    least the spaces (unlike the marbles) stay in one place.
+  </p>
+
+  <p style="color: #424242;">Now we have a simpler ordering of moves to use in our program. Just check, in order, the
+    2n+1 spaces of the board. For each space, either zero or one moves is possible. With this understanding, we can
+    write a boolean method canMove(int[] board, int position) which determines whether a move is possible from the
+    given position:
+  </p>
+
+  <ul style="color:#858585;">
+    <li>If the position is empty, no move is possible;</li><br />
+    <li>If the position contains a black marble, the method checks for a move or jump to the right;</li><br />
+    <li>If the position contains a white marble, the method checks for a move or jump to the left.</li><br />
+  </ul>
 
 
+  <p style="color:#858585;">We write another method <b>int[] makeMove(int[] oldBoard, int position)</b> that will take a
+    board and a position, make a move from that position, and return as its value a new board. (We could write this
+    somewhat more efficiently by changing the old board, rather than creating a new one, but here we are more concerned
+    with simplicity.) In technical jargon, makeMove is "applicative" rather than "mutative." <br /> <br />
+
+    Along with <b>canMove and makeMove,</b> we are using methods <b>puzzleSolved and printBoard</b> with meanings that
+    should be obvious. With these methods, our central backtracking method can be written as follows:</p>
+
+  <pre style="border: 1px solid #d8d8d8; border-radius: 10px; color: #007eb4">
+
+      boolean solvable(int[] board) { 
+
+        if (puzzleSolved(board)) { 
+
+          return true; 
+
+        } 
+        
+        for (int position = 0; position < BOARD_SIZE; position++) { 
+          
+          if (canMove(board, position)) { 
+
+            int[] newBoard = makeMove(board, position); 
+
+            if (solvable(newBoard)) { 
+              
+              printBoard(newBoard); 
+
+              return true; 
+
+            } 
+
+          } 
+        
+        } 
+        
+        return false; 
+      
+      }
+
+    </pre>
+
+  <p style="color:#858585;">Along with canMove and makeMove, we are using methods puzzleSolved and printBoard with
+    meanings that should be obvious.<br /> <br />
+    Here is some output from the program:</p>
+<ol reversed>
+  <li style="color:#424242; font-weight: bold;">WHITE WHITE WHITE &nbsp;_______ &nbsp; BLACK BLACK BLACK</li>
+
+  <li style="color:#424242; font-weight: bold;">WHITE WHITE WHITE BLACK &nbsp;_______ &nbsp; BLACK BLACK</li>
+  
+  <li style="color:#424242; font-weight: bold;">WHITE WHITE &nbsp;_______ &nbsp; BLACK WHITE BLACK BLACK</li>
+  
+  <li style="color:#424242; font-weight: bold;">WHITE &nbsp;_______ &nbsp; WHITE  BLACK WHITE BLACK BLACK</li>
+  
+  <li style="color:#424242; font-weight: bold;">WHITE BLACK WHITE &nbsp;_______ &nbsp; BLACK BLACK</li>
+  
+</ol>
+
+
+  <p style="color:#858585; border: 1px solid #EDEDED; background-color: #F8F8F8;">Notice that the solution is given in reverse order: BLACK starts out on the left and WHITE
+    on the right, as in the last line. I've added line numbers to the actual output in order to emphasize this point.
+    Backtracking always produces its results (sequence of choices) in reverse order; it is up to you, the programmer, to
+    reverse the results again to get them in the correct order.</p>
 </body>
 
 </html>
