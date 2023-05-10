@@ -39,9 +39,9 @@
 
   <p style="color: #858585">This needs an example.</p>
 
-  <img src="./Images/Image_root/Image_root.png" alt="root-Image" width="444px" height="233px" />
+  <img src="./Images/Image_root/Image_root.png" alt="root-Image" width="444px" height="233px" style="margin: 10px;"/>
   <br />
-  <ol style="color: #858585">
+  <ol style="color: #858585;">
     <li>Starting at Root, your options are A and B. You choose A.</li>
     <br />
     <li>At A, your options are C and D. You choose C.</li>
@@ -924,9 +924,12 @@ static boolean no(BinaryTree node) {
 
   <p style="color:#858585 ;">For example, you could make the following sequence of moves:</p>
 
-    <p>Starting</p>
-    <center>
-      <table border="1px" style="background-color: #D8D8D8;">
+
+<div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 30px;">
+ 
+    <p style="font-weight: bold; color:#424242;">Starting position:</p>
+    
+    <table border="1px" style="background-color: #D8D8D8;">
         <tbody>
           <tr>
             <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
@@ -937,86 +940,95 @@ static boolean no(BinaryTree node) {
           </tr>
         </tbody>
       </table>
-    </center>
-
+    </div>
+  <br/>
   
-  <br />
-
-  <center>
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
+    
+    <p style="font-weight: bold; color:#424242;">Black moves ahead:</p>
+     
     <table border="1px" style="background-color: #D8D8D8;">
-      <tbody>
-        <tr>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-        </tr>
-      </tbody>
-    </table>
-  </center>
+        <tbody>
+          <tr>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br/>
 
-  <br />
-  <center>
-    <table border="1px" style="background-color: #D8D8D8;">
-      <tbody>
-        <tr>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-        </tr>
-      </tbody>
-    </table>
-  </center>
+  <div style=" display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 60px;">
+           <p style="font-weight: bold; color:#424242;">White jumps:</p>
+      <table border="1px" style="background-color: #D8D8D8;">
+        <tbody>
+          <tr>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          </tr>
+        </tbody>
+      </table>
+      </div>
 
-  <br />
-  <center>
-    <table border="1px" style="background-color: #D8D8D8;">
-      <tbody>
-        <tr>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-        </tr>
-      </tbody>
-    </table>
-  </center>
+  <br/>
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
+            <p style="font-weight: bold; color:#424242;">Black moves ahead:</p>
 
-  <br />
-  <center>
-    <table border="1px" style="background-color: #D8D8D8;">
-      <tbody>
-        <tr>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+      <table border="1px" style="background-color: #D8D8D8;">
+        <tbody>
+          <tr>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          </tr>
+        </tbody>
+      </table>
+      </div>
 
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-        </tr>
-      </tbody>
-    </table>
-  </center>
+      <br/>
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 60px;">
+        <p style="font-weight: bold; color:#424242;">Black jumps:</p>
 
-  <br />
-  <center>
-    <table border="1px" style="background-color: #D8D8D8;">
-      <tbody>
-        <tr>
-          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+      <table border="1px" style="background-color: #D8D8D8;">
+        <tbody>
+          <tr>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <br/>
 
-          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-        </tr>
-      </tbody>
-    </table>
-  </center>
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
+        <p style="font-weight: bold; color:#424242;">White moves ahead:</p>
+
+      <table border="1px" style="background-color: #D8D8D8;">
+      
+        <tbody>
+          <tr>
+            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+        <p style="font-weight: bold; margin-left: 550px; color:#424242;">Stuck!</p>
+  
 
   <p style="color: #858585">
     The backtracking method is named solvable and returns a boolean. In solvable we shall need to check whether we are
