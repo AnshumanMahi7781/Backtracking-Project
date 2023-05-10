@@ -470,7 +470,7 @@
     </pre>
 
   <p style="color: #858585">Here's what the numbered lines are doing:</p>
-  <ol style="color: #858585">
+  <ol style="color: #858585; margin-left: -25px;">
     <li>
       If we are given a null node, it's not solvable. This statement is so
       that we can call this method with the children of a node, without first
@@ -937,11 +937,9 @@ static boolean no(BinaryTree node) {
   <p style="color: #424242">The black marbles can only move to the right, and the white marbles can only move to the
     left (no backing up). At each move, a marble can either:</p>
 
-  <ul style="color:#858585 ;">
-    <li>Move one space ahead, if that space is clear, or</li><br>
-    <li>Jump ahead over exactly one marble of the opposite color, if the space just beyond that marble is clear.</li>
+    <li style="color:#858585 ;">Move one space ahead, if that space is clear, or</li><br>
+    <li style="color:#858585 ;">Jump ahead over exactly one marble of the opposite color, if the space just beyond that marble is clear.</li>
     <br>
-  </ul>
 
   <p style="color:#858585 ;">For example, you could make the following sequence of moves:</p>
 
@@ -1104,11 +1102,10 @@ static boolean no(BinaryTree node) {
     given position:
   </p>
 
-  <ul style="color:#858585;">
-    <li>If the position is empty, no move is possible;</li><br />
-    <li>If the position contains a black marble, the method checks for a move or jump to the right;</li><br />
-    <li>If the position contains a white marble, the method checks for a move or jump to the left.</li><br />
-  </ul>
+
+    <li style="color:#858585 ;">If the position is empty, no move is possible;</li><br />
+    <li style="color:#858585 ;">If the position contains a black marble, the method checks for a move or jump to the right;</li><br />
+    <li style="color:#858585 ;">If the position contains a white marble, the method checks for a move or jump to the left.</li><br />
 
 
   <p style="color:#858585;">We write another method <b>int[] makeMove(int[] oldBoard, int position)</b> that will take a
