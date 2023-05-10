@@ -10,7 +10,7 @@
 
 <body>
   <h1 style="color: #424242">Backtracking</h1>
-  <p>Backtracking is a form of recursion.</p>
+  <p style="color: #858585">Backtracking is a form of recursion.</p>
 
   <p style="color: #858585">
     The usual scenario is that you are faced with a number of options, and you
@@ -39,7 +39,7 @@
 
   <p style="color: #858585">This needs an example.</p>
 
-  <img src="./Images/Image_root/Image_root.png" alt="root-Image" width="444px" height="233px" style="margin: 10px;"/>
+  <img src="./Images/Image_root/Image_root.png" alt="root-Image" width="444px" height="233px" style="margin: 10px;" />
   <br />
   <ol style="color: #858585;">
     <li>Starting at Root, your options are A and B. You choose A.</li>
@@ -62,12 +62,17 @@
     <br />
   </ol>
 
+
   <p style="
         background-color: #f8f8f8;
         border: 1px solid #ededed;
         border-radius: 10px;
         color: #858585;
         width: 1088px;
+        padding: 1em;
+        line-height: 30px;
+        font-weight: bolder;
+        font-size: 16px;
       ">
     In this example we drew a picture of a tree. The tree is an abstract model
     of the possible sequences of choices we could make. There is also a data
@@ -75,6 +80,7 @@
     tell us what choices we have. (If we do have an actual tree data
     structure, backtracking on it is called depth-first tree searching.)
   </p>
+
 
   <h2 style="color: #424242">The backtracking algorithm.</h2>
   <br />
@@ -102,11 +108,16 @@
     </pre>
 
   <p style="
-        color: #424242;
-        border: 1px solid #ededed;
-        background-color: #f8f8f8;
-        border-radius: 10px;
-      ">
+  background-color: #f8f8f8;
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  color: #858585;
+  width: 1088px;
+  padding: 1em;
+  line-height: 30px;
+  font-weight: bolder;
+  font-size: 16px;
+">
     Notice that the algorithm is expressed as a boolean function. This is
     essential to understanding the algorithm. If solve(n) is true, that means
     node n is part of a solution--that is, node n is one of the nodes on a
@@ -128,10 +139,14 @@
   </p>
 
   <pre style="border: 1px solid #d8d8d8; border-radius: 10px; color: #007eb4">
-        if n is a leaf node { 
+
+    if n is a leaf node { 
+
             if the leaf is a goal node, return true 
+
             else return false 
         }
+        
     </pre>
 
   <p style="color: #858585">
@@ -142,10 +157,14 @@
   </p>
 
   <pre style="border: 1px solid #d8d8d8; border-radius: 10px; color: #007eb4">
-        if n is a leaf node { 
+
+    if n is a leaf node { 
+
             if the leaf is a goal node, return true 
+
             else return false 
         }
+
     </pre>
 
   <p style="color: #858585">
@@ -177,7 +196,8 @@
   </p>
 
   <pre style="border: 1px solid #d8d8d8; border-radius: 10px; color: #007eb4">
-            boolean solve(Node n) { 
+
+    boolean solve(Node n) { 
 
                 put node n on the stack; 
 
@@ -201,6 +221,7 @@
 
                     return false 
                 }
+
         </pre>
 
   <p style="color: #858585">
@@ -233,7 +254,8 @@
   </p>
 
   <pre style="border: 1px solid #d8d8d8; border-radius: 10px; color: #007eb4">
-      boolean solve(Node n) {
+
+    boolean solve(Node n) {
 
         if n is a leaf node { 
 
@@ -261,6 +283,7 @@
             return false 
         } 
     }
+
     </pre>
   <h4 style="color: #424242">Keeping backtracking simple</h4>
 
@@ -925,110 +948,110 @@ static boolean no(BinaryTree node) {
   <p style="color:#858585 ;">For example, you could make the following sequence of moves:</p>
 
 
-<div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 30px;">
- 
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 30px;">
+
     <p style="font-weight: bold; color:#424242;">Starting position:</p>
-    
+
     <table border="1px" style="background-color: #D8D8D8;">
-        <tbody>
-          <tr>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  <br/>
-  
+      <tbody>
+        <tr>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
+
   <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
-    
+
     <p style="font-weight: bold; color:#424242;">Black moves ahead:</p>
-     
+
     <table border="1px" style="background-color: #D8D8D8;">
-        <tbody>
-          <tr>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <br/>
+      <tbody>
+        <tr>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
 
   <div style=" display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 60px;">
-           <p style="font-weight: bold; color:#424242;">White jumps:</p>
-      <table border="1px" style="background-color: #D8D8D8;">
-        <tbody>
-          <tr>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+    <p style="font-weight: bold; color:#424242;">White jumps:</p>
+    <table border="1px" style="background-color: #D8D8D8;">
+      <tbody>
+        <tr>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <br/>
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
-            <p style="font-weight: bold; color:#424242;">Black moves ahead:</p>
+  <br />
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
+    <p style="font-weight: bold; color:#424242;">Black moves ahead:</p>
 
-      <table border="1px" style="background-color: #D8D8D8;">
-        <tbody>
-          <tr>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+    <table border="1px" style="background-color: #D8D8D8;">
+      <tbody>
+        <tr>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-      <br/>
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 60px;">
-        <p style="font-weight: bold; color:#424242;">Black jumps:</p>
+  <br />
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 60px;">
+    <p style="font-weight: bold; color:#424242;">Black jumps:</p>
 
-      <table border="1px" style="background-color: #D8D8D8;">
-        <tbody>
-          <tr>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <br/>
+    <table border="1px" style="background-color: #D8D8D8;">
+      <tbody>
+        <tr>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br />
 
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
-        <p style="font-weight: bold; color:#424242;">White moves ahead:</p>
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 15px;">
+    <p style="font-weight: bold; color:#424242;">White moves ahead:</p>
 
-      <table border="1px" style="background-color: #D8D8D8;">
-      
-        <tbody>
-          <tr>
-            <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
-            <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-        <p style="font-weight: bold; margin-left: 550px; color:#424242;">Stuck!</p>
-  
+    <table border="1px" style="background-color: #D8D8D8;">
+
+      <tbody>
+        <tr>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/black-ball/black-ball.png" alt="black-ball"></th>
+          <th><img src="./Images/white-ball/white-ball.png" alt="white-ball"></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-weight: bold; margin-left: 550px; color:#424242;">Stuck!</p>
+
 
   <p style="color: #858585">
     The backtracking method is named solvable and returns a boolean. In solvable we shall need to check whether we are
@@ -1140,7 +1163,17 @@ static boolean no(BinaryTree node) {
       <li style="color: #007eb4"><b style="color:#424242;"">WHITE WHITE WHITE _______ BLACK BLACK BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE WHITE WHITE BLACK _______ BLACK BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE WHITE _______ BLACK WHITE BLACK BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE _______ WHITE BLACK WHITE BLACK BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE BLACK WHITE _______ WHITE BLACK BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE BLACK WHITE BLACK WHITE _______ BLACK</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE BLACK WHITE BLACK WHITE BLACK _______</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE BLACK WHITE BLACK _______ BLACK WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">WHITE BLACK _______ BLACK WHITE BLACK WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">_______ BLACK WHITE BLACK WHITE BLACK WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK _______ WHITE BLACK WHITE BLACK WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK BLACK WHITE _______ WHITE BLACK WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK BLACK WHITE BLACK WHITE_______ WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK BLACK WHITE BLACK _______ WHITE WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK BLACK _______ BLACK WHITE WHITE WHITE</b></li><li style="color: #007eb4"><b style="color:#424242;"">BLACK BLACK BLACK _______ WHITE WHITE WHITE</b></li></ol>
     </pre>
 
-  <p style="color:#858585; border: 1px solid #EDEDED; background-color: #F8F8F8;">Notice that the solution is given in
+  <p style="
+  background-color: #f8f8f8;
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  color: #858585;
+  width: 1088px;
+  padding: 1em;
+  line-height: 25px;
+  font-size: 16px;
+
+">Notice that the solution is given in
     reverse order: BLACK starts out on the left and WHITE
     on the right, as in the last line. I've added line numbers to the actual output in order to emphasize this point.
     Backtracking always produces its results (sequence of choices) in reverse order; it is up to you, the programmer, to
